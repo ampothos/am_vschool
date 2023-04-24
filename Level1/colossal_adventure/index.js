@@ -55,6 +55,7 @@ function main() {
     let playerName = readline.question("What is your name? \n")
     let player = new Player(playerName);
 
+    // play sequence begins
     while (player.alive) {
         console.log("You can press 'p' or 'Print' at any time to see your stats. Godspeed.")
         let walk = readline.question("Press 'w' to walk.  ")
