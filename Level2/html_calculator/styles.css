@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    background-color: #FFEBC1;
+    margin: 0px;
+}
+
+#heading {
+    grid-row: 1/2;
+    background-color: #D7A86E;
+    color: #FFEBC1;
+    margin: 0px;
+    padding: 20px 0px 20px 10px;
+}
+
+.num1, .num2 {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #D7A86E;
+    border-radius: 5px;
+    outline: none;
+}
+
+div {
+    font-weight: bold;
+    color: #8E3200;
+}
+#add {
+    grid-row: 2/3;
+    padding: 20px 10px;
+}
+
+#subtract {
+    grid-row: 3/4;
+    padding: 20px 10px;
+}
+
+#multiply {
+    grid-row: 4/5;
+    padding: 20px 10px;
+}
+
+.submit {
+    background-color: #A64B2A;
+    color: #FFEBC1;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.submit:hover {
+    background-color: #D7A86E;
+    cursor: pointer;
+}
+.result {
+    padding: 0px 5px 3px 5px;
+}

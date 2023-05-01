@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Mario Pest Control</title>
+</head>
+<body>
+    <div id="grid">
+        <div id="company-logo">
+            <div id="top-red"></div>
+            <h1>Mario Pest Control</h1>
+            <div id="bottom-red"></div>
+        </div>
+        <form id="pest-form" name="pestForm">
+            <ul id="flex-list">
+                <li id="goombas">
+                    <img src="./images/goomba.png">
+                    <h3>Goombas</h3>
+                    <div>5 coins</div>
+                    <input type="number" name="goombas" placeholder="# caught" required>
+                </li>
+                <li id="bob-ombs">
+                    <img src="./images/bob-omb.jpg">
+                    <h3>Bob-ombs</h3>
+                    <div>7 coins</div>
+                    <input type="number" name="bobombs" placeholder="# caught" required>
+                </li>
+                <li id="cheep-cheeps">
+                    <img src="./images/cheep-cheep.png">
+                    <h3>Cheep-cheeps</h3>
+                    <div>11 coins</div>
+                    <input type="number" name="cheepcheeps" placeholder="# caught" required>
+                </li>
+            </ul>
+            <button name="submit" type="submit">Generate Total</button>
+        </form>
+    </div>
+    <footer>
+        <address>
+            <span class="info-label">Email:</span> mario@mariopest.com<br>
+            <span class="info-label">Learn more at:</span> http://www.mariopest.com<br>
+            <span id="company-name">Mario Pest Control</span><br>
+            1234 Party Cir.<br>
+            Marioland, Mushroom Kingdom
+        </address>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>

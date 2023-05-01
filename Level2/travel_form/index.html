@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Roulette Airlines</title>
+</head>
+<body>
+    <h1>Roulette Airlines
+        <div id="slogan">Maybe you'll get there, maybe you won't, we have free wifi and snacks</div>
+    </h1>
+    <h3>Travel Form</h3>
+    <form id="travel-form" name="travelForm">
+        <input class="textbox" type="text" name="firstName" placeholder="First Name" required>
+        <br>
+        <input class="textbox" type="text" name="lastName" placeholder="Last Name" required>
+        <br>
+        <input id="age" class="textbox" type="number" name="age" placeholder="Age" required>
+        <div id="gender">
+            <div class="label">Gender</div>
+            <input type="radio" name="gender" value="Female">
+                <label for="Female">Female</label>
+            <input type="radio" name="gender" value="Male">
+                <label for="Male">Male</label>
+            <input type="radio" name="gender" value="Nonbinary">
+                <label for="Nonbinary">Nonbinary</label>
+            <input type="radio" name="gender" value="Other">
+                <label for="Other">Other</label>
+        </div>
+        <div class="label">Location</div>
+        <select name="location">
+            <option value="Seattle, WA">Seattle, WA</option>
+            <option value="Chicago, IL">Chicago, IL</option>
+            <option value="New York">New York</option>
+            <option value="Atlanta, GA">Atlanta, GA</option>
+            <option value="Paris, France">Paris, France</option>
+            <option value="Singapore">Singapore</option>
+            <option value="London, England">London, England</option>
+
+        </select>
+        <div id="dietary">
+            <div class="label">Dietary Restrictions</div>
+            <input type="checkbox" name="dietary" value="gluten free">
+                <label for="gluten free">Gluten Free</label>
+            <input type="checkbox" name="dietary" value="dairy free">
+                <label for="dairy free">Dairy Free</label>
+            <input type="checkbox" name="dietary" value="vegetarian">
+                <label for="vegetarian">Vegetarian</label>
+            <input type="checkbox" name="dietary" value="vegan">
+                <label for="vegan">Vegan</label>
+            <input type="checkbox" name="dietary" value="kosher">
+                <label for="kosher">Kosher</label>
+        </div>
+        <button type="submit" name="submit">Submit</button>
+
+    </form>
+    <script src="./main.js"></script>
+</body>
+</html>

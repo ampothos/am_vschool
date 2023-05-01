@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0px;
+    background-color: #F4F3F4;
+}
+
+#grid {
+    grid-template-rows: repeat(3, auto);
+}
+#company-logo {
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    padding: 2px 0px 2px 15px;
+    margin: 0px;
+    background-color: #08469E;
+    color: #F4F3F4;
+    width: 100%;
+}
+#top-red{
+    height: 20px;
+    background-color: #C2352D;
+    width: 100%;
+}
+
+#bottom-red {
+    height: 20px;
+    background-color: #C2352D;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+#flex-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+li {
+    margin: 0px 40px;
+}
+
+button {
+    padding: 10px;
+    margin: 0px 80px;
+    background-color: #824C41;
+    color: #F4F3F4;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #D89E6D;
+    cursor: pointer;
+    color: black;
+}
+input {
+    padding: 5px;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #D89E6D;
+}
+
+.invoice {
+    display: inline block;
+    width: 30%;
+    margin: 80px;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.total {
+    font-weight: bold;
+}

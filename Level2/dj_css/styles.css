@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.box {
+    margin: 10px;
+    height: 180px;
+    width: 180px;
+    text-align: center;
+    line-height: 180px;
+}
+
+.red {
+    background-color: rgb(210, 110, 110);
+    transition: background-color 500ms linear, border-radius 1s ease-in-out;
+}
+
+.red:hover {
+    border-radius: 100%;
+    background-color: rgb(220, 170, 44);
+}
+
+.orange {
+    position: relative;
+    background-color: rgb(241, 190, 94);
+    transition: opacity 1s linear;
+}
+
+.orange:hover {
+    position: absolute;
+    width: 100%;
+    opacity: 50%;
+}
+.yellow {
+    background-color: rgb(243, 224, 54);
+    border: 1px solid white;
+    transition: padding-top 500ms ease-in-out, background-color 500ms linear, border 500ms linear;
+}
+
+.yellow:hover {
+    background-color: rgb(210, 110, 110);
+    border: 20px solid white;
+    padding-top: 38px;
+}
+
+
+.green {
+    background-color: rgb(133, 213, 133);
+    transition: border-bottom 300ms ease-in, line-height 300ms ease-out 300ms;
+}
+
+.green:hover {
+    border-bottom: 80px solid green;
+    line-height: 22px;
+}
+
+.blue {
+    background-color: rgb(71, 71, 220);
+    transition: background-color 1s linear, line-height 1s linear 500ms;
+}
+.blue:hover {
+    background-color: rgba(114, 174, 194, 0.749);
+    line-height: 12px;
+}
+
+.violet {
+    background-color: rgb(155, 121, 234);
+    transition: border-top-left-radius 500ms linear, border-bottom-right-radius 500ms linear, border 500ms linear;
+}
+
+.violet:hover {
+    border: 10px solid rgb(108, 13, 81);
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}

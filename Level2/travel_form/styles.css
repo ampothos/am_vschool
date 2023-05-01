@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    margin: 0px;
+    background-color: #F1DDBF;
+}
+
+#slogan {
+    font-weight: normal;
+    font-size: medium;
+    padding-left: 30px;
+    font-style: italic;
+    font-family: cursive;
+}
+
+h1 {
+    grid-row: 1/2;
+    padding: 8px 15px;
+    background-color: #92BA92;
+    color: #525E75;
+    margin: 0px;
+}
+
+h3 {
+    grid-row: 2/3;
+    padding-left: 15px;
+}
+
+#travel-form {
+    grid-row: 3/4;
+    padding-left: 15px;
+}
+
+.textbox {
+    padding: 5px 20px 5px 5px;
+    margin: 5px 0px;
+    border-radius: 4px;
+    border: 2px solid #78938A;
+    outline: none;
+}
+
+.label {
+    font-weight: bold;
+    margin: 10px 0px 5px 0px;
+}
+button {
+    padding: 5px 10px;
+    margin: 10px 0px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #78938A;
+    color: #F1DDBF;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #92BA92;
+}
+select {
+    border: 2px solid #78938A;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+
+
