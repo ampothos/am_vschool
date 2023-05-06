@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-color: rgb(132, 174, 154);
+}
+
+#addForm {
+    background-color: rgb(132, 174, 154);
+    grid-row: 1/2;
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    margin: 5px 0;
+    border-radius: 3px;
+    border: 1px solid rgb(132, 174, 154);
+}
+#price {
+    width: 96%
+}
+
+h2 {
+    margin: 10px 0;
+    color: rgb(47, 41, 27);
+}
+
+#todos {
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    list-style-type: none;
+    padding: 0px;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+li {
+    border-radius: 5px;
+    background-color: antiquewhite;
+    padding: 10px 20px;
+    margin: 10px 0; 
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    float: right;
+    border-radius: 5px;
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: #d2a56b;
+    border: 1px solid #d2a56b;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.edit {
+    margin-left: 10px;
+}

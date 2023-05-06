@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>To Do</title>
+</head>
+<body id="grid">
+    <form id="addForm" name="addForm">
+        <h2>Add a To-Do Item</h2>
+        <input type="text" name="title" id="title" class="inputs" placeholder="Title" require>
+        <div id="price-wrapper">
+            <span id="dolla-sign">$ </span><input type="number" name="price" id="price" class="inputs" placeholder="Price">
+        </div>
+        <input type="text" name="img" id="img" class="inputs" placeholder="Image URL">
+        <textarea name="description" id="description" class="inputs" placeholder="Description" rows="4" cols="40"></textarea>
+        <button type="submit" name="submit">Add Task</button>
+    </form>
+    <ul id="todos"></ul>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

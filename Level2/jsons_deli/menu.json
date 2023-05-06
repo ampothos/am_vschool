@@ -1,0 +1,62 @@
+{
+    "appetizers" : [
+        {
+            "name" : "crab dip",
+            "ingredients" : ["crab", "cheese", "bread"],
+            "description" : "crab dip!"
+        },
+        {
+            "name" : "toasty green beans", 
+            "ingredients" : ["green beans"],
+            "description" : "green beans. They're toasty!"
+        }
+    ],
+    "cold sandwiches" : [
+        {
+            "name" : "turkey sandwich",
+            "ingredients" : ["turkey", "rye bread", "mayo", "pickled onions", "cheese"],
+            "description" : "a good sandwich indeed"
+        },
+        {
+            "name" : "italian sub", 
+            "ingredients" : ["capicola", "salami", "banana peppers", "provalone"],
+            "description" : "Your old fashioned italian grandpa will be overjoyed"
+        }
+    ],
+    "hot sandwiches" : [
+        {
+            "name" : "meatball sub",
+            "ingredients" : ["meatballs", "provalone", "mozzarella", "tomato sauce"],
+            "description" : "A solid meatball sub"
+        }, 
+        {
+            "name" : "blt panini",
+            "ingredients" : ["bacon", "lettuce", "tomato", "sourdough"],
+            "description" : "You asked for it, we gave it to you. A bastardization of a good cold sandwich."
+        }
+    ],
+    "desserts" : [
+        {
+            "name" : "tirimasu", 
+            "ingredients" : ["milk?","little cookies", "some other stuff"],
+            "description" : "classic stuff"
+        },
+        {
+            "name" : "chocolate pudding", 
+            "ingredients" : ["milk", "cocoa", "sugar", "gelatin", "vanilla"],
+            "description" : "some mid-tier chocolate pudding for when you're sad"
+        }
+    ],
+    "drinks" : [
+        {
+            "name" : "coffee",
+            "ingredients" : ["coffee", "milk", "sugar"],
+            "description" : "good coffee"
+        },
+        {
+            "name" : "tea",
+            "ingredients" : ["english breakfast", "milk", "sugar"],
+            "description" : "tea done english style"
+        }
+    ]
+}
