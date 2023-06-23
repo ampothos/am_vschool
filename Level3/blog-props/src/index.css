@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: #ffffff;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#root {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.transparent-overlay {
+  background-color: #181a1b41;
+  height: 100%;
+}
+
+.header {
+  background: url('https://startbootstrap.github.io/startbootstrap-clean-blog/assets/img/home-bg.jpg');
+  height: 500px;
+  background-size: cover;
+  background-position: bottom;
+  
+}
+
+.navbar {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 20px;
+  
+  background-color: #181a1b;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  wrap: wrap;
+  margin: 0px 0px 0px 30px;
+}
+
+ul {
+  list-style: none;
+  font-weight: 800;
+  font-size: 16px;
+}
+ 
+ul>li {
+  margin: 10px;
+}
+
+.start-bootstrap {
+  font-size: 24px;
+  padding-left: 40px;
+
+}
+
+.heading-container {
+  padding-top: 100px;
+}
+
+.title-text {
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.title-subtext {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.post-group>div:hover {
+  color: rgb(91 227 255);
+  cursor: pointer;
+}
+
+.bloglist {
+  margin: 0 20%;
+  border-bottom: 1px solid gray;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  margin-top: 50px;
+  border-bottom: 1px solid grey;
+  
+}
+
+.post-title { 
+  font-weight: 800;
+  font-size: 45px;
+  margin: 0px;
+  line-height: 60px;
+  color: black;
+}
+
+.post-subtitle {
+  font-weight: 200;
+  font-size: 30px;
+  color: black;
+}
+
+.post-data {
+  font-style: italic;
+  color: black;
+}
+
+.post-author {
+  color: black;
+  font-style: normal;
+}
+
+.post-author:hover {
+  color:rgb(91 227 255);
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+img {
+  padding: 20px 15px;
+  width: 70px;
+}
+
+.copyright {
+  padding: 20px;
+  font-style: italic;
+  color: black;
+}

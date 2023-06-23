@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  padding-top: 30px;
+  background-color: rgba(128, 0, 0, 0.361);
+}
+
+.friend {
+  background-color: darkslategray;
+  margin: 5px 5px 20px 5px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.friendlist {
+  display: flex;
+  margin: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pet {
+  background-color: rgb(47, 51, 79);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.pet-name {
+  font-variant: small-caps;
+  font-size: 20px;
+}
+
+.pet-breed {
+  font-size: 15px;
+  text-transform: lowercase;
+}
