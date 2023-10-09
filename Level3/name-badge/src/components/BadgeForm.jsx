@@ -30,7 +30,7 @@ export default function BadgeForm(props) {
     return (
         <div className="badgeform">
            
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={() => handleSubmit()}>
                 <div className="row">
                     <input 
                         required

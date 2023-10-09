@@ -11,7 +11,7 @@ export default function Card(props) {
     else {
         dollar = "$$$"
     }
-   
+    
     const colorclass = `card ${props.timeToGo}`
  
     return (

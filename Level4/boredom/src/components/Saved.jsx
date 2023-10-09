@@ -3,7 +3,7 @@ import { BoredContext, BoredContextProvider } from "./boredContext";
 
 export default function Saved(props) {
     const con = React.useContext(BoredContext)
-    console.log(con.saved)
+  
     const saved = con.saved.map(item => {
             const cName = item.isChecked ? "short-item checked" : "short-item"
             return (

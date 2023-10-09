@@ -2,7 +2,7 @@ import './App.css'
 import React from "react"
 import BadgeForm from './components/BadgeForm'
 import BadgeList from './components/BadgeLIst'
-import ColorBlock from './components/ColorBlock'
+
 
 function App() {
   const [badgeObjects, setBadgeObjects] = React.useState([{
