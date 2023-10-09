@@ -6,7 +6,7 @@ let enemies = ["Cthulu", "Cat-thulu", "giant lobster", "horde of spiders"]
 
 function Player(name) {
     this.name = name
-    this.hp = 10
+    this.hp = 100
     this.inventory = []
     this.alive = true
 };
@@ -57,6 +57,10 @@ function main() {
 
     // play sequence begins
     while (player.alive) {
+        if (enemies.length == 0) {
+            console.log("You've survived! You win!")
+            process.exit()
+        }
         console.log("You can press 'p' or 'Print' at any time to see your stats. Godspeed.")
         let walk = readline.question("Press 'w' to walk.  ")
 
