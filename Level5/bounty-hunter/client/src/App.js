@@ -37,6 +37,7 @@ export default function App() {
       .then(res => {
         setBounties(prev => 
           prev.map(bounty => bounty._id !== _id ? bounty : res.data))
+        getBounties()
       })
       .catch(err => console.log(err))
   }
