@@ -1,3 +1,9 @@
+
+html {
+  background-color: #4A5759;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,110 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* navigation  */
+.navbuttons {
+  color : #4A5759;
+  text-decoration: none;
+  margin: 5px;
+  padding : 10px;
+  background-color: #B0C4B1;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+/* heading */
+.header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 10px;
+  color : #B0C4B1;
+}
+
+/* home block */
+.home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color :#B0C4B1;
+}
+
+/* form stylings  */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding : 10px;
+}
+
+.comments {
+  height: 100px;
+  scroll-behavior: smooth;
+}
+
+/* 3 list display styling  */
+.collection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* individual list stylings */
+.list {
+  background-color: #F7E1D7;
+  padding: 10px;
+ 
+  margin : 20px 5px;
+}
+
+.list-header {
+  font-weight: 800;
+  color : #4A5759;
+  font-size: 1.2rem;
+}
+
+/* individual food item stylings  */
+.food-container {
+  color : #4A5759;
+  margin-top : 20px;
+}
+
+.food-name {
+  font-weight : 600;
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
+.food-category {
+  font-style : italic;
+}
+
+.delete {
+  background-color: #B0C4B1;
+  border-radius : 8px;
+}
+
+
+/* about page stylings */
+.about {
+  margin : 30px;
+  color : #DEDBD2;
+}
+
+p {
+  color : #F7E1D7;
+}
+
+/* styling for the spans */
+.bold {
+  font-weight : 700;
+}
+
+.italic {
+  font-style : italic;
 }
