@@ -2,26 +2,49 @@ import React from "react"
 import { GutContext } from "./gutContext"
 
 export default function FoodForm(props) {
+    
+    // template to easily clear or reset the foodInput state
+    const foodInputTemplate = {name : props.food.name ||"", category: props.food.category || "", rating: props.food.rating || 3, comments: props.food.comments || ""}
+    // food to be added or edited - starts with a clear template setting
+    const [foodInput, setFoodInput] = React.useState(foodInputTemplate)
+
+    // handles any change in the foodInput state anywhere
+    function handleChange(e) {
+        const {name, value} = e.target
+        setFoodInput(prev => ({...prev, [name] : value}))
+    }
+
+     // handles form submission for foodForm anywhere, ADD 1  
+     function handleSubmit(e) {
+        e.preventDefault()
+        const newFood = foodInput
+        props.submit(newFood, props.food._id)
+        setFoodInput(foodInputTemplate)
+        {props.toggle ? 
+            props.toggle() : 
+            setFoodInput(foodInputTemplate)}
+    } 
+
     const con = React.useContext(GutContext)
 
     // form to be used for home or editing
     return (
         <form className="form"
-            onSubmit = {con.handleSubmit}>
+            onSubmit = {handleSubmit}>
             <input
                 type = "text"
                 className= "name"
                 name = "name"
-                value = {con.foodInput.name}
-                onChange = {con.handleChange}
+                value = {foodInput.name}
+                onChange = {handleChange}
                 placeholder = "Food Name"
                 required/>
             <input 
                 type = "text"
                 className = "category"
                 name = "category"
-                value = {con.foodInput.category}
-                onChange = {con.handleChange}
+                value = {foodInput.category}
+                onChange = {handleChange}
                 placeholder = "Category"
                 required/>
             <div className="rating-container">
@@ -35,8 +58,8 @@ export default function FoodForm(props) {
                     min = "1"
                     max = "3"
                     className="rating-range"
-                    value = {con.foodInput.rating}
-                    onChange = {con.handleChange}
+                    value = {foodInput.rating}
+                    onChange = {handleChange}
                     name = "rating"
                     placeholder = "1(bad) to 3(great)"
                     required/>
@@ -44,10 +67,10 @@ export default function FoodForm(props) {
             <textarea
                 name = "comments"
                 className = "comments"
-                value = {con.foodInput.comments}
-                onChange = {con.handleChange}
+                value = {foodInput.comments}
+                onChange = {handleChange}
                 placeholder="Write any comments or observations here"></textarea>
-            <button className="submit">{props.buttonVal}</button>
+            <button className="form-button">{props.buttonVal}</button>
         </form>
     )
 }

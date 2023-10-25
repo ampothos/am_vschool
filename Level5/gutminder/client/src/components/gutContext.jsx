@@ -5,13 +5,8 @@ import axios from "axios"
 const GutContext = React.createContext()
 
 function GutContextProvider(props) {
-    // template to easily clear or reset the foodInput state
-    const foodInputTemplate = {name : "", category: "", rating: 3, comments: ""}
-
     // all foods in the database 
     const [foodList, setFoods] = React.useState([])
-    // food to be added or edited - starts with a clear template setting
-    const [foodInput, setFoodInput] = React.useState(foodInputTemplate)
     
     // sets the foodList to all foods in db 
     function getAllFoods() {
@@ -48,28 +43,22 @@ function GutContextProvider(props) {
             .catch(err => console.log(err))
     }
 
-    // handles any change in the foodInput state anywhere
-    function handleChange(e) {
-        const {name, value} = e.target
-        setFoodInput(prev => ({...prev, [name] : value}))
+    function editOne(newInfo, foodId) {
+        axios.put(`/foods/${foodId}`, newInfo)
+            .then(res => {
+                console.log(`Successfully edited ${res.data.name}`)
+                getAllFoods()
+            })
+            .catch(err => console.log(err))
     }
-
-    // handles form submission for foodForm anywhere, ADD 1  
-    function handleSubmit(e) {
-        e.preventDefault()
-        const newFood = foodInput
-        setFoodInput(foodInputTemplate)
-        addFood(newFood)
-    } 
-
-
+    
     return(
         <GutContext.Provider
             value = {{foodList,
-                foodInput,
-                handleChange,
-                handleSubmit,
-                deleteOne}}>
+                getAllFoods,
+                addFood,
+                deleteOne,
+                editOne}}>
             
             {props.children}
 
