@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 
 const initInputs = {
   title: "",
-  description: "",
+  body: "",
   imgUrl: ""
 }
 
-export default function PostForm(){
+export default function PostForm(props){
   const [inputs, setInputs] = useState(initInputs)
+  const {addPost} = props
 
   function handleChange(e){
     const {name, value} = e.target
@@ -19,7 +20,8 @@ export default function PostForm(){
 
   function handleSubmit(e){
     e.preventDefault()
-    // add post
+    addPost(inputs)
+    setInputs(initInputs)  
   }
 
   const { title, body, imgUrl } = inputs
