@@ -1,13 +1,13 @@
 import React from "react" 
 import PostForm from "./PostForm"
 import PostList from "./PostList"
-import Post from "./Post"
 import { UserContext } from "../context/userProvider"
 
 export default function Profile() {
     const {user : {username}, addPost, posts} = React.useContext(UserContext)
-
-
+    // const con = React.useContext(UserContext)
+    // console.log(con.posts)
+   
     return(
         <div className="profile">
             <h1>Welcome @{username}</h1>
@@ -17,7 +17,7 @@ export default function Profile() {
 
             <div className="posts">
                 <h3>Posts</h3>
-                {/* <PostList posts = {posts}/> */}
+                <PostList posts = {posts}/>
             </div>
         </div>
     )

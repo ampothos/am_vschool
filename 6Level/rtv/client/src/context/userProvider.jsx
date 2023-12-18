@@ -15,11 +15,40 @@ export default function UserProvider(props){
     
     const initState = {user : JSON.parse(localStorage.getItem("user")) || {}, 
                         token : localStorage.getItem("token") || "", 
-                        posts : []}
+                        posts : JSON.parse(localStorage.getItem("posts")) || [],
+                        errMsg : ""}
 
     const [userState, setUserState] = React.useState(initState)
+    const [comments, setComments] = React.useState([])
 
-   
+    function handleAuthError(errMsg) {
+        setUserState(prevState => ({
+            ...prevState,
+            errMsg
+        })   
+    )}
+
+    function getUserPosts(){
+        userAxios.get("/api/posts/user")
+          .then(res => {
+            localStorage.setItem("posts", JSON.stringify(res.data))
+            setUserState(prevState => ({
+              ...prevState,
+              posts: res.data
+            }))
+          })
+          .catch(err => handleAuthError(err.response.data.errMsg))
+      }
+    
+      function getAllComments() {
+        userAxios.get("/api/comments/") 
+            .then(res => {
+                
+                setComments(res.data)
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+      }
+
     function signup(creds) {
         axios.post("/auth/signup", creds)
             .then(res => {
@@ -32,7 +61,7 @@ export default function UserProvider(props){
                     token
                 }))
             })
-            .catch(err => console.dir(err.response.data))
+            .catch(err => handleAuthError(err.response.data.errMsg))
     }
 
     function login(creds) {
@@ -41,20 +70,31 @@ export default function UserProvider(props){
             const {user, token} = res.data
             localStorage.setItem("token", token)
             localStorage.setItem("user", JSON.stringify(user))
+            getUserPosts()
             setUserState(prev => ({
                 prev,
                 user,
                 token
             }))
+            
         })
-            .catch(err => console.dir(err.response.data))
+            .catch(err => handleAuthError(err.response.data.errMsg))
     }
     
     function logout() {
         localStorage.removeItem("token")
         localStorage.removeItem("user")
+        localStorage.removeItem("posts")
         setUserState({user : {}, token : "", posts : []})
     }
+
+    function resetAuthErr() {
+        setUserState(prevState => ({
+            ...prevState,
+            errMsg : ""
+        }))
+    }
+
     
     //header is in userAxios
     function addPost(newPost) {
@@ -65,15 +105,18 @@ export default function UserProvider(props){
                     posts : [...prev.posts, res.data]
                 }))
             })
-            .catch(err => console.log(err.response.data.errMsg))
+            .catch(err => handleAuthError(err.response.data.errMsg))
     }
     return(
         <UserContext.Provider
             value = {{...userState,
+                    comments,
                     signup,
                     login,
                     logout,
-                    addPost}}>
+                    addPost,
+                    getAllComments,
+                    resetAuthErr}}>
             {props.children}
         </UserContext.Provider>
     )

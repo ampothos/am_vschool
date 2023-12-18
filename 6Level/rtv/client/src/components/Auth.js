@@ -10,7 +10,7 @@ export default function Auth() {
     const [inputs, setInputs] = React.useState(initInputs)
     const [toggle, setToggle] = React.useState(false)
 
-    const con = useContext(UserContext)
+    const {signup, login, errMsg, resetAuthErr} = useContext(UserContext)
 
     // changes state as input is typed
     function handleChange(e) {
@@ -21,14 +21,18 @@ export default function Auth() {
 
     function handleSignup(e) {
         e.preventDefault()
-        con.signup(inputs)
+        signup(inputs)
         
     }
 
     function handleLogin(e) {
         e.preventDefault()
-        con.login(inputs)
+        login(inputs)
         
+    }
+    function toggleForm() {
+      setToggle(prev => !prev)
+      resetAuthErr()
     }
 
 
@@ -42,8 +46,9 @@ return (
             handleSubmit={handleSignup}
             inputs={inputs}
             buttonText="Sign up"
+            errMsg = {errMsg}
           />
-          <p onClick={() => setToggle(prev => !prev)}>Already a member?</p>
+          <p onClick={toggleForm}>Already a member?</p>
         </>
       :
         <>
@@ -52,8 +57,9 @@ return (
             handleSubmit={handleLogin}
             inputs={inputs}
             buttonText="Login"
+            errMsg = {errMsg}
           />
-          <p onClick={() => setToggle(prev => !prev)}>Not a member?</p>
+          <p onClick={toggleForm}>Not a member?</p>
         </>}
     </div>
 )}
