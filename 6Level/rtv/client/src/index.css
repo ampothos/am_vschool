@@ -11,3 +11,97 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.post {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+  margin-bottom: 0px;
+}
+
+.post-title {
+  font-size: 30px;
+}
+
+.post-body {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+li {
+  list-style: none;
+}
+
+.comment {
+  border: 1px solid black;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 10px;
+  color : gray;
+  background-color: antiquewhite;
+  margin: 10px;
+}
+
+.add-comment {
+  margin-left : 60px;
+} 
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  padding: 20px;
+}
+
+input {
+  border : 1px solid gray;
+  border-radius : 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.post {
+  width: stretch;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+.post-and-comments {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-container {
+  margin-left : 80px;
+}

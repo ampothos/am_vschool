@@ -57,4 +57,42 @@ postRouter.get("/user", (req, res, next) => {
         return res.status(200).send(posts)
     })
 })
+
+postRouter.put('/upVote/:postId', (req, res, next) => {
+    Post.findOneAndUpdate(
+        { _id: req.params.postId },
+        {
+            $addToSet: { likedUsers: req.auth._id },
+            $pull: { dislikedUsers: req.auth._id }
+        },
+        { new: true },
+        (err, updatedPost) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedPost)
+        }
+    )
+})
+
+postRouter.put('/downVote/:postId', (req, res, next) => {
+    Post.findOneAndUpdate(
+        { _id: req.params.postId },
+        {
+            $addToSet: { dislikedUsers: req.auth.__id },
+            $pull: { likedUsers: req.auth._id }
+        },
+        { new: true },
+        (err, updatedPost) => {
+            if (err) {
+                 res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedPost)
+        }
+    )
+})
+
+
 module.exports = postRouter

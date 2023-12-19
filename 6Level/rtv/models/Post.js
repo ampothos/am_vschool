@@ -21,7 +21,15 @@ const postSchema = new Schema({
         type : Schema.Types.ObjectId,
         ref : "User",
         required : true
-    }
+    },
+    likedUsers : [{
+        type : Schema.Types.ObjectId,
+        ref : 'User'
+    }],
+    dislikedUsers : [{
+        type : Schema.Types.ObjectId,
+        ref : 'User'
+    }]
 })
 
 module.exports = mongoose.model('Post', postSchema)

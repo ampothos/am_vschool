@@ -9,11 +9,12 @@ import ProtectedRoute from './components/ProtectedRoute.js'
 
 export default function App(){
 
-  const {token, logout} = React.useContext(UserContext)
+  const {token, logout, getAllComments, getAllPosts} = React.useContext(UserContext)
 
-  // React.useEffect(() => {
-  //   getAllComments()
-  // }, [])
+  React.useEffect(() => {
+    getAllComments()
+    getAllPosts()
+  }, [])
 
   return (
     <div className="app">

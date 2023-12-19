@@ -5,8 +5,7 @@ import { UserContext } from "../context/userProvider"
 
 export default function Profile() {
     const {user : {username}, addPost, posts} = React.useContext(UserContext)
-    // const con = React.useContext(UserContext)
-    // console.log(con.posts)
+    
    
     return(
         <div className="profile">

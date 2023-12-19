@@ -28,9 +28,27 @@ const userSchema = new Schema({
 //this happens pre-save before saved on db to make sure pw is encrypted on save
 userSchema.pre("save", function(next){
     const user = this
-    if(!user.isModified("password")) return next()
-    bcrypt.hash(user.password, 10)
+    if(!user.isModified("password")) {return next()}
+    bcrypt.hash(user.password, 10, (err, hash) => {
+        if (err) {return next(err)}
+        user.password = hash
+        next()
+    })
+})
+
+userSchema.methods.checkPassword = function(passwordAttempt, callback){
+    bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
+        //truthy = error
+        if(err) {return callback(err)}
+        //falsey = no error, boolean did it work
+        return callback(null, isMatch)
+    })
 }
-)
+
+userSchema.methods.withoutPassword = function(){
+    const user = this.toObject()
+    delete user.password
+    return user
+}
 
 module.exports = mongoose.model('User', userSchema)

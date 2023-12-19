@@ -20,6 +20,7 @@ export default function UserProvider(props){
 
     const [userState, setUserState] = React.useState(initState)
     const [comments, setComments] = React.useState([])
+    const [allPosts, setAllPosts] = React.useState([])
 
     function handleAuthError(errMsg) {
         setUserState(prevState => ({
@@ -27,6 +28,35 @@ export default function UserProvider(props){
             errMsg
         })   
     )}
+    
+
+    function upVote(postId) {
+        userAxios.put(`/api/posts/upVote/${postId}`)
+            .then(res => {
+                setAllPosts(prev => prev.map(post => postId !== post._id ? post : res.data))
+                setUserState(prevUserState => ({ ...prevUserState, posts : prevUserState.posts.map(post => postId !== post._id ? post : res.data) }))
+            })
+            .catch(err => console.log(err))
+    }
+    
+    function downVote(postId) {
+        userAxios.put(`/api/posts/downVote/${postId}`)
+            .then(res => {
+                setAllPosts(prev => prev.map(post => postId !== post._id ?  post : res.data))
+                setUserState(prevUserState => ({ ...prevUserState, posts: prevUserState.posts.map(post => postId !== post._id ? post : res.data) }))
+            })
+            .catch(err => console.log(err))
+    }
+    
+    function getAllPosts(){
+        userAxios.get("/api/posts/")
+          .then(res => {
+            localStorage.setItem("allPosts", JSON.stringify(res.data))
+            setAllPosts(res.data)
+            
+          })
+          .catch(err => handleAuthError(err.response.data.errMsg))
+      }
 
     function getUserPosts(){
         userAxios.get("/api/posts/user")
@@ -43,8 +73,8 @@ export default function UserProvider(props){
       function getAllComments() {
         userAxios.get("/api/comments/") 
             .then(res => {
-                
                 setComments(res.data)
+
             })
             .catch(err => console.log(err.response.data.errMsg))
       }
@@ -95,6 +125,15 @@ export default function UserProvider(props){
         }))
     }
 
+    function postNewComment(newComment, postId) {
+        userAxios.post(`/api/comments/${postId}`, newComment)
+            .then(res=> {
+                setComments(prev => {
+                    return [...prev, newComment]
+                })
+            })
+            .catch(err => console.log(err))
+    }
     
     //header is in userAxios
     function addPost(newPost) {
@@ -107,16 +146,23 @@ export default function UserProvider(props){
             })
             .catch(err => handleAuthError(err.response.data.errMsg))
     }
+
+    
     return(
         <UserContext.Provider
             value = {{...userState,
                     comments,
+                    allPosts,
+                    getAllPosts,
                     signup,
                     login,
                     logout,
                     addPost,
                     getAllComments,
-                    resetAuthErr}}>
+                    resetAuthErr,
+                    postNewComment,
+                    upVote,
+                    downVote}}>
             {props.children}
         </UserContext.Provider>
     )
